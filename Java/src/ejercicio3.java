@@ -1,27 +1,22 @@
+import javax.swing.*;
 import java.util.Locale;
 import java.util.Scanner;
 
 public class ejercicio3 {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        String nombre1 = JOptionPane.showInputDialog("Ingrese un nombre");
+        System.out.println("nombre1 = " + nombre1);
+        String nombre2 = JOptionPane.showInputDialog("Ingrese un nombre");
+        System.out.println("nombre2 = " + nombre2);
+        String nombre3 = JOptionPane.showInputDialog("Ingrese un nombre");
+        System.out.println("nombre3 = " + nombre3);
 
-        System.out.println("Ingrese el nombre de 1 familiar: ");
-        String nombre1 = scanner.nextLine();
-        String nombre1A = nombre1.substring(1,2).toUpperCase() + "." + nombre1.substring(nombre1.length()-2);
-        System.out.println("nombre1A = " + nombre1A);
+        String max = nombre1.split(" ")[0].length() > nombre2.split(" ")[0].length() ? nombre1 : nombre2;
+        max = nombre3.split(" ")[0].length() > max.split(" ")[0].length() ? nombre3 : max;
+
+        System.out.println("El nombre mas largo es: " + max);
 
 
-        System.out.println("Ingrese el nombre de 1 familiar: ");
-        String nombre2 = scanner.nextLine();
-        String nombre2A = nombre2.substring(1,2).toUpperCase() + "." + nombre2.substring(nombre2.length()-2);
-
-
-        System.out.println("Ingrese el nombre de 1 familiar: ");
-        String nombre3 = scanner.nextLine();
-        String nombre3A = nombre3.substring(1,2).toUpperCase() + "." + nombre3.substring(nombre3.length()-2);
-
-        String nombres = nombre1A + "_" + nombre2A + "_" + nombre3A;
-        System.out.println("nombres = " + nombres);
 
 
 
